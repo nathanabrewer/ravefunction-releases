@@ -1,0 +1,158 @@
+Rave Function: third-party software notices
+===========================================
+
+Rave Function's apps are built with the open-source software below. This
+file and the licence texts it names are in the licenses/ folder inside every
+app, and at https://ravefunction.com/download/ beside each download. The
+credits for the music, the fonts, the avatar and the visual references are in
+CREDITS.md, also inside every app.
+
+Which apps carry what
+---------------------
+- Every app: Godot Engine with the libraries it includes (1), and the native
+  core, which is this project's Rust code with godot-rust (2), Symphonia (3)
+  and the other crates in rust-crates.txt (4). The Archivo font (7).
+- The game (Quest, Vision Pro, phones, desktop): also IBM Plex Mono (7).
+- Quest: also the OpenXR parts (5).
+- Every Android app (the game on Quest, Rave Function Watch on Android
+  phones): also AndroidX, Kotlin and LLVM's libc++ (6).
+
+1. Godot Engine 4.8 beta3
+-------------------------
+MIT License.
+Copyright (c) 2014-present Godot Engine contributors.
+Copyright (c) 2007-2014 Juan Linietsky, Ariel Manzur.
+Source: https://github.com/godotengine/godot/tree/c51ff06e8836a70ea905701c081bf94124dcd6ce
+Licence text: godot-LICENSE.txt.
+
+Godot includes libraries by other authors (among them FreeType, HarfBuzz,
+ICU, mbed TLS, ENet, zstd, zlib, libpng, libwebp and Vulkan Memory
+Allocator). Their copyright notices and full licence texts are in
+godot-COPYRIGHT.txt. The Vision Pro app is built from the same engine source
+with this project's fixes (scripts/patches/godot-visionos-*.patch), under the
+same licence.
+
+2. godot-rust 0.5.5 (crates godot, godot-core, godot-cell, godot-ffi)
+---------------------------------------------------------------------
+Mozilla Public License 2.0.
+Copyright godot-rust; Bromeon and contributors.
+Source: https://github.com/godot-rust/gdext/tree/v0.5.5
+Licence text: godot-rust-MPL-2.0.txt.
+
+This project changes one file of godot-ffi (src/shard_registry.rs: visionOS
+registers the native classes with a constructor). The complete source of the
+changed godot-ffi, under the same licence, is godot-ffi-0.5.5-source.zip,
+beside this file.
+
+3. Symphonia 0.6.1 (the MP3, AAC-LC, Vorbis and FLAC decoders of live radio)
+---------------------------------------------------------------------------
+Mozilla Public License 2.0, used unmodified.
+Copyright the Project Symphonia developers (Philip Deljanov and contributors).
+Source: https://github.com/pdeljanov/Symphonia/tree/v0.6.1
+Licence text: symphonia-MPL-2.0.txt.
+
+4. The other Rust crates in the native core
+-------------------------------------------
+RustFFT, serde_json, qrcode, glam and the crates they use, each under the MIT
+License (most offer MIT or Apache 2.0; the project uses MIT). Every crate, its
+version and source, and the MIT texts with their copyright lines are in
+rust-crates.txt. qrcode's licence is also in qrcode-MIT.txt.
+
+5. Quest: OpenXR
+----------------
+- Godot OpenXR Vendors 5.2.0. MIT License.
+  Copyright (c) 2022-present Godot XR contributors.
+  Source: https://github.com/GodotVR/godot_openxr_vendors/tree/5.2.0-stable
+  It is built with godot-cpp: MIT License, Copyright (c) 2017-present Godot
+  Engine contributors (https://github.com/godotengine/godot-cpp).
+  Both MIT texts are at the end of this file.
+- The OpenXR loader (the Khronos Group's OpenXR SDK 1.1.63). Apache License
+  2.0: apache-2.0.txt. Source: https://github.com/KhronosGroup/OpenXR-SDK
+- Meta's OpenXR extension headers, which the plugin is built with:
+  "Copyright © Facebook Technologies, LLC and its affiliates. All rights
+  reserved. Your use of this SDK or tool is subject to the Oculus SDK License
+  Agreement, available at https://developer.oculus.com/licenses/oculussdk/"
+
+6. Android: AndroidX, Kotlin and libc++
+---------------------------------------
+- AndroidX libraries (activity, annotation, core, fragment, lifecycle, splash
+  screen and the others Godot's Android app uses; The Android Open Source
+  Project) and Kotlin (the standard library and kotlinx.coroutines;
+  JetBrains). Apache License 2.0: apache-2.0.txt.
+  Sources: https://android.googlesource.com/platform/frameworks/support and
+  https://github.com/JetBrains/kotlin, https://github.com/Kotlin/kotlinx.coroutines
+- libc++ from the Android NDK (lib/arm64-v8a/libc++_shared.so; the LLVM
+  Project). Apache License 2.0 with LLVM Exceptions: apache-2.0.txt and the
+  exceptions at the end of this file. Source: https://github.com/llvm/llvm-project
+
+7. Fonts
+--------
+Archivo, Copyright 2020 The Archivo Project Authors
+(https://github.com/Omnibus-Type/Archivo), and IBM Plex Mono, Copyright 2017
+IBM Corp. (https://github.com/IBM/plex), under the SIL Open Font License 1.1,
+unmodified. The licences are in the app beside the fonts:
+assets/fonts/Archivo-OFL.txt and assets/fonts/IBMPlexMono-OFL.txt.
+
+
+Licence texts not in a file of their own
+========================================
+
+MIT License: Godot OpenXR Vendors
+---------------------------------
+Copyright (c) 2022-present Godot XR contributors (see CONTRIBUTORS.md)
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+MIT License: godot-cpp
+----------------------
+Copyright (c) 2017-present Godot Engine contributors.
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+LLVM Exceptions to the Apache 2.0 License (libc++)
+--------------------------------------------------
+As an exception, if, as a result of your compiling your source code, portions
+of this Software are embedded into an Object form of such source code, you
+may redistribute such embedded portions in such Object form without complying
+with the conditions of Sections 4(a), 4(b) and 4(d) of the License.
+
+In addition, if you combine or link compiled forms of this Software with
+software that is licensed under the GPLv2 ("Combined Software") and if a
+court of competent jurisdiction determines that the patent provision (Section
+3), the indemnity provision (Section 9) or other Section of the License
+conflicts with the conditions of the GPLv2, you may retroactively and
+prospectively choose to deem waived or otherwise exclude such Section(s) of
+the License, but only in their entirety and only with respect to the Combined
+Software.
